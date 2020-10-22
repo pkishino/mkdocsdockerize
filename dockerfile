@@ -8,7 +8,7 @@ COPY ./mkdockerize.sh /usr/local/bin/
 RUN ln -s /usr/local/bin/mkdockerize.sh /
 
 # installing required packages and mkdocs 
-RUN apk update && apk add gcc libc-dev bash
+RUN apk update && apk add gcc libc-dev bash tar rsync
 RUN pip install mkdocs
 
 # working directory for mkdocs and shared dir with host
