@@ -1,4 +1,5 @@
 #Simplified CI config
+#Using docker-in-docker
 image: docker:19.03.12
 
 services:
@@ -7,13 +8,18 @@ services:
 stages:
   - build
   - test
+
+#Had to specify docker host to be able to run test to check if website is served
 variables:
   DOCKER_HOST: tcp://docker:2375
   DOCKER_TLS_CERTDIR: ""
+
+#Standard show docker info for reference and login to perform push later
 before_script:
   - docker info
   - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
 
+#Build and create new tag and push to docker hub
 build:
   stage: build
   script:
@@ -22,6 +28,7 @@ build:
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
     - docker push $CI_REGISTRY_IMAGE:latest
 
+#Run two simple tests
 test:
   stage: test
   before_script:
