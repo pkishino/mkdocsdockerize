@@ -18,8 +18,9 @@ if [ "$1" = 'produce' ]; then
 # Exiting the process will stop and kill the container
 elif [ "$1" = 'serve' ]; then
 	# if we supply a filename it will try to untar and use this
-	if [ -f "$2.tar.gz" ]; then
-		tar -zxvf $2.tar.gz --strip-components=1
+	if [ -f "$2" || -f "$2.tar.gz" ]; then
+		file=($basename $2 .tar.gz)
+		tar -zxvf $file.tar.gz --strip-components=1
 	fi
 	#if project contains valid yml we serve it
 	if [ -f "mkdocs.yml" ]; then
