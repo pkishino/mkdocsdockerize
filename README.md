@@ -2,7 +2,8 @@
 [![pipeline status](https://gitlab.com/pkishino/mkdocsdockerize/badges/main/pipeline.svg)](https://gitlab.com/pkishino/mkdocsdockerize/-/commits/main)
 ![Docker Stars](https://img.shields.io/docker/stars/pkishino/mkdocsdockerize.svg)
 ![Docker Pulls](https://img.shields.io/docker/pulls/pkishino/mkdocsdockerize.svg)
-![Docker Automated](https://img.shields.io/docker/automated/pkishino/mkdocsdockerize.svg)
+![Docker Automated](https://img.shields.io/docker/cloud/automated/pkishino/mkdocsdockerize.svg)
+![Docker Build](https://img.shields.io/docker/cloud/build/pkishino/mkdocsdockerize.svg)
 ![Docker Version](https://img.shields.io/docker/v/pkishino/mkdocsdockerize/latest.svg)
 
 This project uses docker to encapsulate certain mkdocs behaviour
